@@ -1,1 +1,1 @@
-# api-ponto-inteligente
+[![Build Status](https://app.travis-ci.com/mtmjr92/api-ponto-inteligente.svg?branch=main)](https://app.travis-ci.com/mtmjr92/api-ponto-inteligente)

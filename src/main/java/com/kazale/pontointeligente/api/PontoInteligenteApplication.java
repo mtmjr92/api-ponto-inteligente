@@ -22,4 +22,5 @@ public class PontoInteligenteApplication {
 			System.out.println("### Quantidade de elementos por pagina = " + this.qntPorPagina);
 		};
 	}
+
 }

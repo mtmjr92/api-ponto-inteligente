@@ -1,5 +1,6 @@
 package com.kazale.pontointeligente.api;
 
+import com.kazale.pontointeligente.api.utils.SenhaUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,6 +21,16 @@ public class PontoInteligenteApplication {
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
 			System.out.println("### Quantidade de elementos por pagina = " + this.qntPorPagina);
+
+			String senhaEncoded = SenhaUtils.gerarBCrypt("123456");
+
+			System.out.println("Senha encoded: " + senhaEncoded);
+
+			senhaEncoded = SenhaUtils.gerarBCrypt("123456");
+
+			System.out.println("Senha encoded: " + senhaEncoded);
+
+			System.out.println("Senha valida: " + SenhaUtils.senhaValida("123456", senhaEncoded));
 		};
 	}
 

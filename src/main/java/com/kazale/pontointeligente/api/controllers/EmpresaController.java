@@ -1,6 +1,7 @@
 package com.kazale.pontointeligente.api.controllers;
 
 import com.kazale.pontointeligente.api.dtos.EmpresaDto;
+import com.kazale.pontointeligente.api.responses.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,9 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmpresaController {
 
     @PostMapping
-    public ResponseEntity<EmpresaDto> cadastrar(@RequestBody EmpresaDto empresaDto) {
+    public ResponseEntity<Response<EmpresaDto>> cadastrar(@RequestBody EmpresaDto empresaDto) {
+        Response<EmpresaDto> response = new Response<EmpresaDto>();
+
         empresaDto.setId(1L);
-        return ResponseEntity.ok(empresaDto);
+        response.setData(empresaDto);
+
+        return ResponseEntity.ok(response);
     }
 
 }
